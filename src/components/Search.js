@@ -1,8 +1,14 @@
 import {BiSearch, BiCaretDown, BiCheck} from "react-icons/bi"
 import {FcCheckmark} from "react-icons/fc"
+import {useState} from 'react';
+
 
 //Este es el componente que se despliega en sort by 
-const DropDown =() =>{
+const DropDown =({toggle}) =>{
+    //Si toggle es falso (toggle es la variable creada en el componente Search igualado a toggleSort) entonces retorne null
+    if(!toggle){
+        return null;
+    }
     return(
         /*
         - origin-top-rigth: transform-origin: top right (me permite cambiar la posición de los elementos transformados)
@@ -43,6 +49,7 @@ const DropDown =() =>{
 
 //Este es mi componente de la barra de búsqueda
 const Search = () => {
+    let [toggleSort, setToggleSort] = useState(false)
     return (
         //- py-5: padding-top:1.25rem, padding-bottom:1.25rem 
         <div className="py-5">
@@ -63,12 +70,14 @@ const Search = () => {
                     {/*
                     -px-4: padding-left: 1rem, padding-right:1.25rem
                     -ml-2: margin-left:0.5rem 
+                    Básicamente lo que hace el método setToggleSort es cambiar el estado 
+                    de nuestra variable toggleSort 
                     */}
-                    <button type="button"
+                    <button type="button" onClick = {() => setToggleSort(!toggleSort)}
                         className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
                         Sort By <BiCaretDown className="ml-2" />
                     </button>
-                    <DropDown />
+                    <DropDown toggle = {toggleSort}/>
                     </div>
                 </div>
             </div>
