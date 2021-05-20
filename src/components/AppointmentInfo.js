@@ -1,4 +1,4 @@
-import {BiTrash, BiTrashAlt} from "react-icons/bi";
+import {BiTrashAlt} from "react-icons/bi";
 
 //Este componente es el que contiene la información 
 // que se encuentra en nuestro data.json

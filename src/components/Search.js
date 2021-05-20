@@ -1,4 +1,4 @@
-import {BiSearch, BiCaretDown, BiCheck} from "react-icons/bi"
+import {BiSearch, BiCaretDown} from "react-icons/bi"
 import {FcCheckmark} from "react-icons/fc"
 import {useState} from 'react';
 

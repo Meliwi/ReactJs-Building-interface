@@ -12,15 +12,15 @@ const AddAppointment = () => {
             -rounded-t-md: border-top-left-radius: 0.375rem; border-top-right-radius: 0.375rem;
             */}
             {/*necesitamos crear un evento para el botón, al clickear se ejecuta un arrow function, 
-            el cual usa el método setToggleForm y setea el toggleform a lo opuesto que esta nuestro toggleForm
+            el cual usa el método setToggleForm y setea el estado del toggleform a lo opuesto que esta nuestro toggleForm
             
             -- Revisa el estado del toggleForm si es true entonces nuestro button tiene estilo rounded-t-md 
             si no este será rounded-md
             */}
             <button onClick = {() => {setToggleForm(!toggleForm)}} 
-                className={`bg-blue-400 text-white px-2 py-3 w-full text-left rounded-t-md
+                className={`bg-blue-400 hover:bg-blue-500 text-white px-2 py-3 min-w-full text-center rounded-t-md
                 ${toggleForm ? 'rounded-t-md' : 'rounded-md'}`}>
-                <div><BiCalendar className="inline-block align-text-top" /> Add Appointment</div>
+                <div><BiCalendar className="inline-block align-text-top pl-5" /> Add Appointment</div>
             </button>
             {   
                 //check for the toggle form and if it exists display the form 
