@@ -8,6 +8,20 @@ function App() {
 
   //Hacemos uso de nuestro hook useState 
   let[appointmentList, setAppointmentList] = useState([]);
+  let[query, setQuery] = useState("");
+
+  /*Esta función lo que hace es crear un array con los nombres de las 
+    mascotas, el nombre de su dueño y las notas
+  */
+  const filteredAppointments = appointmentList.filter(
+    item => {
+      return (
+        item.petName.toLowerCase().includes(query.toLowerCase()) ||
+        item.ownerName.toLowerCase().includes(query.toLowerCase()) ||
+        item.aptNotes.toLowerCase().includes(query.toLowerCase())
+      )
+    }
+  )
 
   /*Creamos el método de fetch data donde vamos a hacer la petición de nuestros 
     datos usando useCallBack el cual es otro hook 
@@ -45,11 +59,15 @@ function App() {
         <BiCalendar  className="inline-block text-red-400 align-top text-center"/>Your appointments</h1>
         {/*Hacemos el llamado a nuestro componente AddAppointments*/}
         <AddAppointments/>
-        {/*Hacemos el llamado a nuestro primer componente Search*/}
-        <Search/>
+        {/*Hacemos el llamado a nuestro primer componente Search
+          Además de esto se hace uso de la función onQuery change que 
+          recibe un query query y setea su estado
+        */}
+        <Search query={query} 
+        onQueryChange = {myQuery => setQuery(myQuery)}/>
         {/*Se crea un ul y dentro de este a la lista que hemos importado se mapea por los elementos que se encuentran en nuestra data.json */}
         <ul className= "divide-y divide-gray-200">
-          {appointmentList.map(appointment => (
+          {filteredAppointments.map(appointment => (
             <AppointmentInfo key={appointment.id}
             appointment={appointment}
             /* 
