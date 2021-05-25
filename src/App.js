@@ -67,7 +67,7 @@ function App() {
   return (
     /* para centrar un container (setea un max width de un elemento) se usa mx-auto
     luego se añade un margin top de 3px y un font weigth de 100*/
-    <div className="App container mx-auto mt-10 font-thin px-10 ">
+    <div className="App container mx-auto my-auto pt-6 font-thin px-10 bg-white">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
       <h1 className="text-5xl mb-5" >
