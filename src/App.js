@@ -9,9 +9,11 @@ function App() {
   //Hacemos uso de nuestro hook useState 
   let[appointmentList, setAppointmentList] = useState([]);
   let[query, setQuery] = useState("");
+  let[sortBy, setSortBy] = useState("petName");
+  let[orderBy, setOrderBy] = useState("asc");
 
-  /*Esta función lo que hace es crear un array con los nombres de las 
-    mascotas, el nombre de su dueño y las notas
+  /*se crea un array con los nombres de las 
+    mascotas, el nombre de su dueño y las notas, este se denomina filteredAppointments
   */
   const filteredAppointments = appointmentList.filter(
     item => {
@@ -21,7 +23,20 @@ function App() {
         item.aptNotes.toLowerCase().includes(query.toLowerCase())
       )
     }
-  )
+    /*Entonces lo que se va a hacer a continuación es ordenar el array teniendo en cuenta 
+    los nombres de las mascotas, entonces lo que se hace es declarar la variable order como orderBy = asc,
+    si esta en orden ascendente entonces order = 1, de lo contrario será -1, luego lo que se hace es 
+    comparar dos nombres de mascotas entre ellas y se returna -1 * order o de lo contrario retornará 1 * order.
+    
+    Básicamente a y b son arrays enteros, y el sortBy lo que esta haciendo es usar el petName, entonces
+    esto es lo que permite realizar las comparaciones entre ellos. */
+  ).sort((a,b)=> {
+    let order = (orderBy === 'asc') ? 1 : -1;
+    return (
+      a[sortBy].toLowerCase() < b[sortBy].toLowerCase() 
+      ? -1 * order: 1 * order 
+    )
+  })
 
   /*Creamos el método de fetch data donde vamos a hacer la petición de nuestros 
     datos usando useCallBack el cual es otro hook 
@@ -52,7 +67,7 @@ function App() {
   return (
     /* para centrar un container (setea un max width de un elemento) se usa mx-auto
     luego se añade un margin top de 3px y un font weigth de 100*/
-    <div className="App container mx-auto mt-3 font-thin px-3">
+    <div className="App container mx-auto mt-10 font-thin px-10">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
       <h1 className="text-5xl mb-5" >
@@ -74,7 +89,7 @@ function App() {
             La función filter crea un nuevo array con todos los elementos que cumplan con 
             la condición implementada por la función dada.
 
-            La función OnDeleteAppointment resibe un id, a partir de aquí lo que se hace es 
+            La función OnDeleteAppointment recibe un id, a partir de aquí lo que se hace es 
             revisar que el id dado no coincida con los id pertenecientes al data.json, 
             luego de esto la función filter crea un nuevo array con los elementos que cumplan con 
             esa condición es decir todos los que no quieran ser eliminados y por ultimo 
@@ -83,7 +98,7 @@ function App() {
             onDeleteAppointment ={
               appointmentId => 
               setAppointmentList(appointmentList.filter(appointment => 
-                appointment.id != appointmentId))
+                appointment.id !== appointmentId))
             }
             />
           ))
