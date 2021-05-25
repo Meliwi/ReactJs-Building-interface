@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 
 //Este es el componente que se despliega en sort by 
-const DropDown =({toggle}) =>{
+const DropDown =({toggle, orderBy, onOrderByChange, sortBy, onSortByChange}) =>{
     //Si toggle es falso (toggle es la variable creada en el componente Search igualado a toggleSort) entonces retorne null
     if(!toggle){
         return null;
@@ -27,28 +27,28 @@ const DropDown =({toggle}) =>{
             - px-4: padding-left: 1rem, padding-right:1rem 
             - text-sm: font-size: 0.875rem, line-height: 1.25rem;
             */}
-            <div
+            <div onClick = {() => onSortByChange('petName')} 
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-                role="menuitem">Pet Name <FcCheckmark /></div>
-            <div
+                role="menuitem">Pet Name {(sortBy) === 'petName' && <FcCheckmark />}</div>
+            <div onClick = {() => onSortByChange('ownerName')} 
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-                role="menuitem">Owner Name  <FcCheckmark /></div>
-            <div
+                role="menuitem">Owner Name  {(sortBy) === 'ownerName' && <FcCheckmark />}</div>
+            <div onClick = {() => onSortByChange('aptDate')} 
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-                role="menuitem">Date <FcCheckmark /></div>
-            <div
+                role="menuitem">Date {(sortBy) === 'Date' && <FcCheckmark />}</div>
+            <div onClick = {() => onOrderByChange('asc')} 
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer border-gray-1 border-t-2"
-                role="menuitem">Asc <FcCheckmark /></div>
-            <div
+                role="menuitem">Asc {(orderBy) === 'asc' && <FcCheckmark />}</div>
+            <div onClick = {() => onOrderByChange('desc')} 
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-                role="menuitem">Desc <FcCheckmark /></div>
+                role="menuitem">Desc {(orderBy) === 'desc' && <FcCheckmark />}</div>
             </div>
         </div>
     )
 }
 
 //Este es mi componente de la barra de búsqueda
-const Search = ({query, onQueryChange}) => {
+const Search = ({query, onQueryChange, sortBy, onSortByChange, orderBy, onOrderByChange}) => {
     let [toggleSort, setToggleSort] = useState(false)
     return (
         //- py-5: padding-top:1.25rem, padding-bottom:1.25rem 
@@ -82,7 +82,12 @@ const Search = ({query, onQueryChange}) => {
                         className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
                         Sort By <BiCaretDown className="ml-2" />
                     </button>
-                    <DropDown toggle = {toggleSort}/>
+                    <DropDown toggle = {toggleSort}
+                        sortBy={sortBy}
+                        onSortByChange = {mySort => onSortByChange(mySort)}
+                        orderBy = {orderBy}
+                        onOrderByChange = {mySort => onOrderByChange(mySort)}
+                    />
                     </div>
                 </div>
             </div>

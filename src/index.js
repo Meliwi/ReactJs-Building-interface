@@ -6,7 +6,7 @@ import App from './App';
 
 //Renderización de mis componentes
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode className="bg-gray-300">
     <App />
   </React.StrictMode>,
   document.getElementById('root')

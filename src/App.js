@@ -67,7 +67,7 @@ function App() {
   return (
     /* para centrar un container (setea un max width de un elemento) se usa mx-auto
     luego se añade un margin top de 3px y un font weigth de 100*/
-    <div className="App container mx-auto mt-10 font-thin px-10">
+    <div className="App container mx-auto mt-10 font-thin px-10 ">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
       <h1 className="text-5xl mb-5" >
@@ -79,7 +79,12 @@ function App() {
           recibe un query query y setea su estado
         */}
         <Search query={query} 
-        onQueryChange = {myQuery => setQuery(myQuery)}/>
+        onQueryChange = {myQuery => setQuery(myQuery)}
+        orderBy={orderBy}
+        onOrderByChange={mySort => setOrderBy(mySort)}
+        sortBy = {sortBy}
+        onSortByChange = {mySort => setSortBy(mySort)}
+        />
         {/*Se crea un ul y dentro de este a la lista que hemos importado se mapea por los elementos que se encuentran en nuestra data.json */}
         <ul className= "divide-y divide-gray-200">
           {filteredAppointments.map(appointment => (
