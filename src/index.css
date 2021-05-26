@@ -5,7 +5,9 @@
 
 .background-container{
     background-image: url("./images/background.png");
-    background-position-x: center;
-  /*background-color: #fecaca;*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 

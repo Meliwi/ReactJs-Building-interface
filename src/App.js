@@ -1,6 +1,7 @@
 import {useState , useEffect, useCallback} from 'react'; 
 import {BiCalendar} from "react-icons/bi";
 import Search from "./components/Search";
+import pic from "./images/Pet-food.png"
 import AddAppointments from "./components/AddAppointments";
 import AppointmentInfo from "./components/AppointmentInfo";
 
@@ -70,9 +71,14 @@ function App() {
     <div className="App container mx-auto my-auto px-20 py-6 font-thin px-10 bg-white">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
-      <h1 className="text-5xl mb-5" >
-        <BiCalendar  className="inline-block text-red-400 align-top text-center"/>Your appointments</h1>
+      <div className="flex justify-between items-center	mx-auto ">
+        <h1 className="text-5xl mb-5 w-max" >
+          <BiCalendar  className="inline-block text-red-400 align-top text-center"/>Your appointments </h1>
+          <img className="w-44 overflow-hidden" src={pic} alt="pet-image"/>
+      </div>
+
         {/*Hacemos el llamado a nuestro componente AddAppointments*/}
+        <h2 className="text-2xl text-left ml-2 mb-2">Set your pet's appointment right here</h2>
         <AddAppointments
           //Método encargado de enviar a la lista de citas la información insertada por el usuario
           onSendAppointment = {myAppointment => setAppointmentList([...appointmentList, myAppointment])}
