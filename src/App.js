@@ -67,13 +67,17 @@ function App() {
   return (
     /* para centrar un container (setea un max width de un elemento) se usa mx-auto
     luego se añade un margin top de 3px y un font weigth de 100*/
-    <div className="App container mx-auto my-auto pt-6 font-thin px-10 bg-white">
+    <div className="App container mx-auto my-auto px-15 py-6 font-thin px-10 bg-white">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
       <h1 className="text-5xl mb-5" >
         <BiCalendar  className="inline-block text-red-400 align-top text-center"/>Your appointments</h1>
         {/*Hacemos el llamado a nuestro componente AddAppointments*/}
-        <AddAppointments/>
+        <AddAppointments
+          //Método encargado de enviar a la lista de citas la información insertada por el usuario
+          onSendAppointment = {myAppointment => setAppointmentList([...appointmentList, myAppointment])}
+          lastId={appointmentList.reduce((max, item) => Number(item.id) > max ? Number(item.id) : max, 0)}
+        />
         {/*Hacemos el llamado a nuestro primer componente Search
           Además de esto se hace uso de la función onQuery change que 
           recibe un query query y setea su estado

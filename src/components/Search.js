@@ -79,7 +79,7 @@ const Search = ({query, onQueryChange, sortBy, onSortByChange, orderBy, onOrderB
                     de nuestra variable toggleSort 
                     */}
                     <button type="button" onClick = {() => setToggleSort(!toggleSort)}
-                        className="justify-center px-4 py-2 bg-blue-400 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                        className="justify-center px-4 py-2 bg-blue-500 border-2 border-blue-400 text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 flex items-center" id="options-menu" aria-haspopup="true" aria-expanded="true">
                         Sort By <BiCaretDown className="ml-2" />
                     </button>
                     <DropDown toggle = {toggleSort}

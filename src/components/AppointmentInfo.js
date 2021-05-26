@@ -13,10 +13,10 @@ const AppointmentInfo = ({appointment, onDeleteAppointment}) =>{
             {/*flex-grow: se usa cuando se quiere que el elemento llene todo el espacio disponible*/}
             <div className="flex-grow">
                 <div className="flex items-center">
-                    <span className="flex-none font-medium text-2xl text-blue-600">{appointment.petName}</span>
+                    <span className="flex-none font-medium text-2xl text-blue-900">{appointment.petName}</span>
                     <span className="flex-grow text-right">{appointment.aptDate}</span>
                 </div>
-                <div><b className="font-bold text-blue-500">Owner:</b> {appointment.ownerName}</div>
+                <div><b className="font-bold text-blue-900">Owner:</b> {appointment.ownerName}</div>
                 {/*leading tight: line height 1.25*/}
                 <div className="leading-tight">{appointment.aptNotes}</div>
             </div>
