@@ -68,7 +68,7 @@ function App() {
   return (
     /* para centrar un container (setea un max width de un elemento) se usa mx-auto
     luego se añade un margin top de 3px y un font weigth de 100*/
-    <div className="App container mx-auto my-auto px-20 py-6 font-thin px-10 bg-white">
+    <div className="App container mx-auto my-auto px-10 py-6 font-thin px-10 bg-white">
       {/*text-5xl asigna un font-size de 3rem y un line-heigh:1 
       elementos en linea (inline-block )*/}
       <div className="flex justify-between items-center	mx-auto ">

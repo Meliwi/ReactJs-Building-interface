@@ -2,7 +2,7 @@
   "name": "reactjs-interface",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://meliwi.github.io/pets-dates",
+  "homepage": "https://Meliwi.github.io/pets-dates/",
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.12.0",
