@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/pets-dates/static/css/main.c90fb1d4.chunk.css",
-    "main.js": "/pets-dates/static/js/main.c747bcc7.chunk.js",
-    "main.js.map": "/pets-dates/static/js/main.c747bcc7.chunk.js.map",
+    "main.js": "/pets-dates/static/js/main.973c623c.chunk.js",
+    "main.js.map": "/pets-dates/static/js/main.973c623c.chunk.js.map",
     "runtime-main.js": "/pets-dates/static/js/runtime-main.161a2565.js",
     "runtime-main.js.map": "/pets-dates/static/js/runtime-main.161a2565.js.map",
-    "static/js/2.7cdc47d5.chunk.js": "/pets-dates/static/js/2.7cdc47d5.chunk.js",
-    "static/js/2.7cdc47d5.chunk.js.map": "/pets-dates/static/js/2.7cdc47d5.chunk.js.map",
+    "static/js/2.e02f6022.chunk.js": "/pets-dates/static/js/2.e02f6022.chunk.js",
+    "static/js/2.e02f6022.chunk.js.map": "/pets-dates/static/js/2.e02f6022.chunk.js.map",
     "index.html": "/pets-dates/index.html",
     "static/css/main.c90fb1d4.chunk.css.map": "/pets-dates/static/css/main.c90fb1d4.chunk.css.map",
-    "static/js/2.7cdc47d5.chunk.js.LICENSE.txt": "/pets-dates/static/js/2.7cdc47d5.chunk.js.LICENSE.txt",
+    "static/js/2.e02f6022.chunk.js.LICENSE.txt": "/pets-dates/static/js/2.e02f6022.chunk.js.LICENSE.txt",
     "static/media/Pet-food.5d335535.png": "/pets-dates/static/media/Pet-food.5d335535.png",
     "static/media/index.css": "/pets-dates/static/media/background.173b1cf3.png"
   },
   "entrypoints": [
     "static/js/runtime-main.161a2565.js",
-    "static/js/2.7cdc47d5.chunk.js",
+    "static/js/2.e02f6022.chunk.js",
     "static/css/main.c90fb1d4.chunk.css",
-    "static/js/main.c747bcc7.chunk.js"
+    "static/js/main.973c623c.chunk.js"
   ]
 }
