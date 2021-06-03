@@ -11,10 +11,10 @@ const AddAppointment = ({onSendAppointment, lastId}) => {
         aptNotes: ''
     }
 
-    {/* this is what's going to allow our application to show or hide the rest of the form*/}
+    /* this is what's going to allow our application to show or hide the rest of the form*/
     let [toggleForm, setToggleForm] = useState(false)
-    {/*Creamos unas variables para manejar las citas añadidas (add appointment),
-    el estado inicial de estas es vacio como lo indica clearData*/}
+    /*Creamos unas variables para manejar las citas añadidas (add appointment),
+    el estado inicial de estas es vacio como lo indica clearData*/
     let [formData, setFormData] = useState(clearData)
 
     function formDataPublish(){
